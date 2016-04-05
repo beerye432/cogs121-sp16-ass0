@@ -2,26 +2,34 @@
 <html>
 
 <head>
-    <title></title>
+    <link rel = "stylesheet" type = "text/css" href = "/stylesheets/bootstrap.css">
+    <title>Welcome to the message board!</title>
 </head>
 
-<body>
+<body style = "margin-left: 15px">
+
+    <h1> Welcome to the Message Board</h1>
     <form action="/message" method="post">
-    	Email: <input type="text" name="email"><br>
-    	Content: <textarea name="content"></textarea><br>
-    	<input type="submit" value="Submit">
+        <div class = "form-group">
+        	<span style = "font-size: 25px">Email: </span><input style = "width: 30%" class = "form-control" type="text" name="email">
+        	<span style = "font-size: 25px">Content: </span> <textarea style = "width: 30%; margin-bottom: 10px" rows = "6  " class = "form-control" name="content"></textarea>
+        	<input type="submit" class = "btn btn-default" value="Submit">
+        </div>
     </form>
+
+
+   
     {{#if data}}
     <h3>My Messages</h3>
     <table>
-    	<thead>
+    	<thead style = "font-size: 50px; font-decoration: underline;">
     		<th>Email</th>
     		<th>Content</th>
     		<th>Date</th>
     	</thead>
     	<tbody>
     		{{#each data}}
-    		<tr>
+    		<tr style = "font-size: 35px; border: 2px solid black; padding-bottom: 10px">
     			<td>{{email}}</td>
     			<td>{{content}}</td>
     			<td>{{created}}</td>
